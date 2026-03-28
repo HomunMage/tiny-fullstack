@@ -22,7 +22,7 @@ services:
     build:
       context: ./backend
     ports:
-      - "127.0.0.1:5000:5000"
+      - "5000:5000"
     volumes:
       - ./backend/:/app/
       - ./migration/:/migration/:ro
@@ -124,10 +124,9 @@ services:
       - ./.browser:/output
     environment:
       PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
-    extra_hosts:
-      - "localhost:host-gateway"
     networks:
       - shared-network
+      - app-network
     tty: true
     stdin_open: true
 
