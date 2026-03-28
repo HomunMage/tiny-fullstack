@@ -124,6 +124,8 @@ services:
       - ./.browser:/output
     environment:
       PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
+    extra_hosts:
+      - "localhost:host-gateway"
     networks:
       - shared-network
     tty: true
